@@ -1,8 +1,5 @@
 package matrici;
-
-import javax.imageio.plugins.tiff.GeoTIFFTagSet;
-import javax.management.ValueExp;
-import javax.swing.table.DefaultTableColumnModel;
+import java.util.Arrays;
 
 public class Matrix {
 	
@@ -32,6 +29,12 @@ public class Matrix {
 		this.rows = m.length;
 		this.cols = m[0].length;
 		this.m = m;
+	}
+	
+	
+	// @Override
+	public boolean equals(Matrix other) {
+		return Arrays.deepEquals(m, other.m);
 	}
 	
 	public Matrix sommaMatrici(Matrix other) {
@@ -96,19 +99,19 @@ public class Matrix {
 	}
 	
 	@Override
-		public String toString() {
+	public String toString() {
+		
+		StringBuilder res = new StringBuilder();
+		res.append("Matrice:\n(\n");
+		for (int i = 0; i < getRows(); i++) {
+			for (int j = 0; j < getCols(); j++)
+				res.append(getValue(i, j) + "\t");
 			
-			StringBuilder res = new StringBuilder();
-			res.append("Matrice:\n(\n");
-			for (int i = 0; i < getRows(); i++) {
-				for (int j = 0; j < getCols(); j++)
-					res.append(getValue(i, j) + "\t");
-				
-				res.append("\n");
-			}
-			res.append(")");
-			return res.toString();
+			res.append("\n");
 		}
+		res.append(")");
+		return res.toString();
+	}
 	
 	private double[][] ExtractMinor(double[][] m, int row, int col) {
 		
