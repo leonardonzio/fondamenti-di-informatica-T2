@@ -52,7 +52,7 @@ public class Matrix {
 		
 		
 		// se il numero colonne a != numero righe b
-		// if(a[0].length != b.length) throw new Exception("n.colonne 'a' != n.righe 'b'");
+		//if(a[0].length != b.length) throw new Exception("n.colonne 'a' != n.righe 'b'");
 		
 		// altrimenti fai prodotto
 		double[][] res = new double[m.length][other.getCols()];
