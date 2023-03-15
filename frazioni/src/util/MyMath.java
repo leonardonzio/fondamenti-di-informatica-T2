@@ -1,4 +1,4 @@
-package frazioni;
+package util;
 
 public class MyMath
 {

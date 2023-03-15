@@ -1,5 +1,4 @@
-import frazioni.Frazione;
-
+package frazioni;
 public class TestFrazione {
 	public static void main(String[] args) {
 		

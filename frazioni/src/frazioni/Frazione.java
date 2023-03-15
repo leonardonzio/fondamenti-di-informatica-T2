@@ -1,7 +1,7 @@
 package frazioni;
 
-import java.util.function.BiConsumer;
-import javax.management.loading.PrivateClassLoader;
+import util.MyMath;
+
 
 public class Frazione {
 	private int num, den;
