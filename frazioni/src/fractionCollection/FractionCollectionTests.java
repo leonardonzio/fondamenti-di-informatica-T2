@@ -113,6 +113,7 @@ public class FractionCollectionTests {
 		
 		
 		//testMul
+
 		res = c1.mul(c2);
 				 
 		// assert
