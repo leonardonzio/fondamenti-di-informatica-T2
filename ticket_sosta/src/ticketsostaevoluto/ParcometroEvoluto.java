@@ -1,6 +1,5 @@
 package ticketsostaevoluto;
 
-import java.time.DayOfWeek;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -29,7 +28,7 @@ public class ParcometroEvoluto {
 		}
 		
 		// il costo è il costo orario per per il tempo in ore;
-		return costoOrario * tempo.toMinutes()/60.0;
+		return costoOrario * tempo.toMinutes() / 60.0;
 	}
 	
 	
