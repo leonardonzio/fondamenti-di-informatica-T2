@@ -25,7 +25,8 @@ public class ParcometroTest {
 	@Test
 	public void testSostaConMinimo1h_1130_1150() {
 		Parcometro emitter = new Parcometro(tariffaH1);
-		Ticket tk = emitter.emettiTicket(LocalTime.of(11,30), LocalTime.of(11,50));	
+		Ticket tk = emitter.emettiTicket(LocalTime.of(11,30), LocalTime.of(11,50));
+		assertEquals("0,50\u00A0€", tk.getCostoAsString());
 	}
 
 	@Test

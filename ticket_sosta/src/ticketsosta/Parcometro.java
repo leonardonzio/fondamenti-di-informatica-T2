@@ -31,7 +31,7 @@ public class Parcometro {
 		
 		double costo;
 		if(Duration.between(inizioEffettivo, fine).toMinutes() <= tariffa.getDurataMinima()) {
-			costo = tariffa.getTariffaOraria() * tariffa.getDurataMinima();
+			costo = tariffa.getTariffaOraria() * tariffa.getDurataMinima()/60.0;
 		}
 		else {
 			costo = calcolaCosto(tariffa.getTariffaOraria(), inizioEffettivo, fine);
