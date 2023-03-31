@@ -6,7 +6,6 @@ import java.time.LocalTime;
 public class Parcometro {
 	
 	private Tariffa tariffa;
-	
 	public Parcometro(Tariffa tariffa) {
 		this.tariffa = tariffa;
 	}
@@ -22,6 +21,7 @@ public class Parcometro {
 			tempo = Duration.between(da, a);
 		}
 		
+		// il costo è il costo orario per per il tempo in ore;
 		return costoOrario * tempo.toMinutes()/60.0;
 	}
 	
@@ -30,14 +30,14 @@ public class Parcometro {
 		LocalTime inizioEffettivo = inizio.plusMinutes(tariffa.getMinutiFranchigia());
 		
 		double costo;
-		
-		if(Duration.between(inizioEffettivo, fine).toMinutes() < tariffa.getDurataMinima()) {
+		if(Duration.between(inizioEffettivo, fine).toMinutes() <= tariffa.getDurataMinima()) {
 			costo = tariffa.getTariffaOraria() * tariffa.getDurataMinima();
 		}
 		else {
-			costo = calcolaCosto(tariffa.getTariffaOraria(), inizio, fine);
+			costo = calcolaCosto(tariffa.getTariffaOraria(), inizioEffettivo, fine);
 		}
 		
+		// faccio return del ticket (creandolo)
 		return new Ticket(inizio, fine, costo);	
 	}
 	
