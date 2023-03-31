@@ -15,7 +15,7 @@ public class Parcometro {
 		
 		Duration tempo;
 		if(a.isBefore(da) || LocalTime.of(0, 0).equals(a)) {
-			tempo = Duration.between(da, LocalTime.of(23,59).plusMinutes(1));
+			tempo = Duration.between(da, LocalTime.of(23,59)).plusMinutes(1);
 		}
 		else {
 			tempo = Duration.between(da, a);
@@ -28,9 +28,10 @@ public class Parcometro {
 	public Ticket emettiTicket(LocalTime inizio, LocalTime fine) {
 		
 		LocalTime inizioEffettivo = inizio.plusMinutes(tariffa.getMinutiFranchigia());
-		
 		double costo;
-		if(Duration.between(inizioEffettivo, fine).toMinutes() <= tariffa.getDurataMinima()) {
+		Duration durataSosta = Duration.between(inizioEffettivo, fine);
+		
+		if(durataSosta.toMinutes() <= tariffa.getDurataMinima()) {
 			costo = tariffa.getTariffaOraria() * tariffa.getDurataMinima()/60.0;
 		}
 		else {
@@ -41,7 +42,9 @@ public class Parcometro {
 		return new Ticket(inizio, fine, costo);	
 	}
 	
+	@Override
+	public String toString() {
+		return "Parcometro con la tariffa: " + tariffa.toString();
+	}
+	
 }
-
-
-// prova

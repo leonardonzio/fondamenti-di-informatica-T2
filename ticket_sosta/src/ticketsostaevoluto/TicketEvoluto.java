@@ -1,4 +1,4 @@
-package ticketsosta;
+package ticketsostaevoluto;
 
 import java.text.NumberFormat;
 import java.time.*;
@@ -6,13 +6,13 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.Locale;
 
-public class Ticket {
+public class TicketEvoluto {
 
 	private double costo;
-	private LocalTime inizio;
-	private LocalTime fine;
+	private LocalDateTime inizio;
+	private LocalDateTime fine;
 	
-	public Ticket(LocalTime inizio, LocalTime fine, double costo) {
+	public TicketEvoluto(LocalDateTime inizio, LocalDateTime fine, double costo) {
 		super();
 		this.costo = costo;
 		this.inizio = inizio;
@@ -29,11 +29,11 @@ public class Ticket {
 		return nF.format(costo);
 	}
 
-	public LocalTime getInizioSosta() {
+	public LocalDateTime getInizioSosta() {
 		return inizio;
-	}
+	} 
 
-	public LocalTime getFineSosta() {
+	public LocalDateTime getFineSosta() {
 		return fine;
 	}
 
@@ -42,8 +42,8 @@ public class Ticket {
 
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append("Inizio sosta:  ").append(inizio.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).withLocale(Locale.ITALY))).append("\n");
-		sb.append("Fine sosta:  ").append(fine.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).withLocale(Locale.ITALY))).append("\n");
+		sb.append("Inizio sosta:  ").append(inizio.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT).withLocale(Locale.ITALY))).append("\n");
+		sb.append("Fine sosta:  ").append(fine.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT).withLocale(Locale.ITALY))).append("\n");
 		sb.append("Costo:  ").append(getCostoAsString());
 		
 		return sb.toString();
@@ -57,6 +57,7 @@ public class Ticket {
 		
 		return d.toHours() + ":" + sMin;	
 	}
+
 	
 	
 }
