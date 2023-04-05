@@ -62,7 +62,11 @@ public class Appointment {
 	}
 	
 	public void setDuration(Duration duration) {
+<<<<<<< HEAD
 		this.to = getFrom().plus(duration);
+=======
+		//..
+>>>>>>> ca2d3d1b75498183e1a6ce8d16b6c5085b984147
 	}
 	
 	@Override

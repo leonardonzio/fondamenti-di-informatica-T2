@@ -54,8 +54,13 @@ public class AppointmentCollection {
 			return;
 		}
 		
+<<<<<<< HEAD
 		Appointment[] temp = new Appointment[innerContainer.length * DEFAULT_GROWTH_FACTOR];
 		temp = Arrays.copyOf(innerContainer, innerContainer.length * DEFAULT_GROWTH_FACTOR);
+=======
+		Appointment[] temp;
+		temp = Arrays.copyOf(innerContainer, innerContainer.length*2);
+>>>>>>> ca2d3d1b75498183e1a6ce8d16b6c5085b984147
 		temp[size] = app;
 		size++;
 		innerContainer = temp;

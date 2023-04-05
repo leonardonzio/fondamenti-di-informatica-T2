@@ -1,15 +1,22 @@
 package control;
 
+<<<<<<< HEAD
 import java.time.*;
 
 import org.junit.runners.model.FrameworkField;
 
+=======
+>>>>>>> ca2d3d1b75498183e1a6ce8d16b6c5085b984147
 import model.*;
 
 public class MyCalendar {
 
 	private AppointmentCollection allAppointments;
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> ca2d3d1b75498183e1a6ce8d16b6c5085b984147
 	public MyCalendar() {
 		allAppointments = new AppointmentCollection(); // physical = 10, logsize = 2
 	}
@@ -30,6 +37,7 @@ public class MyCalendar {
 	
 	public AppointmentCollection getAllAppointments() {
 		
+<<<<<<< HEAD
 		AppointmentCollection res = new AppointmentCollection(allAppointments.size());
 		
 		for (int i = 0; i < allAppointments.size(); i++) {
@@ -86,5 +94,14 @@ public class MyCalendar {
 	
 	
 	
+=======
+		AppointmentCollection temp = new AppointmentCollection(allAppointments.getSize());
+		for (int i = 0; i < temp.getSize(); i++) {
+			temp.add(allAppointments.get(i));
+		}
+		
+		return temp;
+	}
+>>>>>>> ca2d3d1b75498183e1a6ce8d16b6c5085b984147
 }
 	
