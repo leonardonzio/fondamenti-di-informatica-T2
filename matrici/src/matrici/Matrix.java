@@ -26,9 +26,7 @@ public class Matrix {
 	}
 	
 	public Matrix(double[][] m) {
-		this.rows = m.length;
-		this.cols = m[0].length;
-		this.m = m;
+		this(m.length, m[0].length);
 	}
 	
 	

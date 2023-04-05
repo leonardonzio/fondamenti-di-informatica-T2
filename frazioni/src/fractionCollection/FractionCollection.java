@@ -1,7 +1,6 @@
 package fractionCollection;
 
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.StringJoiner;
 
 import frazioni.Frazione;
@@ -56,7 +55,7 @@ public class FractionCollection {
 		}
 		
 		Frazione[] temp;
-		temp = Arrays.copyOf(innerContainer, innerContainer.length *2);
+		temp = Arrays.copyOf(innerContainer, innerContainer.length * DEFAULT_GROWTH_FACTOR);
 		temp[size] = f;
 		size++;
 		innerContainer = temp;
