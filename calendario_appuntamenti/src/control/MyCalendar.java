@@ -79,8 +79,13 @@ public class MyCalendar {
 	}
 	
 	
-	//public AppointmentCollection getWeekAppointments(LocalDate date) {
-		// completare
-	//}
+	public AppointmentCollection getWeekAppointments(LocalDate date) {
+		long distanceFromPastMonday = date.getDayOfWeek().getValue() - DayOfWeek.MONDAY.getValue();
+		LocalDate weekStartDate = date.minusDays(distanceFromPastMonday);
+		LocalDateTime weekStart = LocalDateTime.of(weekStartDate, LocalTime.of(0, 0));
+		LocalDateTime weekEnd = weekStart.plusWeeks(1);
+
+		return getAppointmentsIn(weekStart, weekEnd);
+	}
 }
 	
