@@ -14,8 +14,8 @@ public class Gioco {
 	public Gioco(int maxTentativi, int dim) {
 		this.dim = dim;
 		this.maxTentativi = maxTentativi;
-		this.risposte = new Risposta[dim];
-		this.tentativi = new Combinazione[dim];
+		this.risposte = new Risposta[maxTentativi];
+		this.tentativi = new Combinazione[maxTentativi];
 		this.stato = Status.IN_CORSO;
 		this.numTentativi = 0;
 	}
@@ -77,11 +77,17 @@ public class Gioco {
 	}
 	
 	public Risposta ultimaRisposta() {
-		return risposte[tentativiEffettuati()-1];
+		if (tentativiEffettuati() == 0)
+			return null;
+		
+		return risposte[tentativiEffettuati() - 1];
 	}
 	
 	public Combinazione ultimoTentativo() {
-		return tentativi[tentativiEffettuati()-1];
+		if (tentativiEffettuati() == 0)
+			return null;
+		
+		return tentativi[tentativiEffettuati() - 1];
 	}
 	
 	
