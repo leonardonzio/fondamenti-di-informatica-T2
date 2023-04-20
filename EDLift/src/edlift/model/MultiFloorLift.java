@@ -11,14 +11,13 @@ public class MultiFloorLift extends Lift{
 	
 	public MultiFloorLift(int minFloor, int maxFloor, int initialFloor, double speed) {
 		super(minFloor, maxFloor, initialFloor, speed);
-		queue = new Queue(4); // perche lo è nel test
+		this.queue = new Queue(4); // per far funzionare il test
 	}
 	
 	@Override
 	public String getMode() {
 		return "Multi";
 	}
-
 	
 	@Override
 	public RequestResult goToFloor(int floor) {
@@ -29,9 +28,10 @@ public class MultiFloorLift extends Lift{
 			return RequestResult.ACCEPTED;
 		}
 		
-		boolean checkInsert = queue.insert(floor);
-		if(checkInsert)
-			return RequestResult.ACCEPTED;
+		boolean insertResult = queue.insert(floor);
+		if(insertResult) {
+			return RequestResult.ACCEPTED;			
+		}
 		else {
 			RequestResult res = RequestResult.REJECTED;
 			res.setFloor(Integer.MIN_VALUE);
@@ -39,18 +39,16 @@ public class MultiFloorLift extends Lift{
 			return res;
 		}
 	}
-	
+
 	@Override
 	public boolean hasPendingFloors() {
-		if(queue.hasItems())	{return true;}
-		else					{return false;}
+		return queue.hasItems();
 	}
 	
 	@Override
 	public int nextPendingFloor(LiftState state) {
-		if(hasPendingFloors())
+		if (hasPendingFloors())
 			return queue.extract();
-		
 		else
 			return Integer.MIN_VALUE;
 	}

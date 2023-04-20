@@ -17,8 +17,9 @@ public class BasicLift extends Lift
 	public RequestResult goToFloor(int floor) {
 		checkArrivalFloor(floor);
 		
-		if(!getCurrentState().equals(LiftState.REST))
-			return RequestResult.REJECTED;
+		if(!getCurrentState().equals(LiftState.REST)) {
+			return RequestResult.REJECTED;			
+		}
 		
 		setRequestedFloor(floor);
 		return RequestResult.ACCEPTED;

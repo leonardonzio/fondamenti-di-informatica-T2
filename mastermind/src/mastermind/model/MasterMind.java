@@ -29,9 +29,8 @@ public class MasterMind {
 		int totali = 0;
 		//int neri = quantiNeri(tentativo);
 		
-		
 		int neri = 0;
-		for (int i=0; i<tentativo.dim(); i++) {
+		for (int i=0; i < tentativo.dim(); i++) {
 			if (tentativo.getPiolo(i).equals(segreta.getPiolo(i)))
 				neri++;
 		}
@@ -53,7 +52,6 @@ public class MasterMind {
 		for (int i = neri; i < totali; i++) {
 			res.setPiolo(i, PioloRisposta.BIANCO);
 		}
-		
 		
 		return res;
 	}

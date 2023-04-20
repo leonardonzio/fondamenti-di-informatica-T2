@@ -60,19 +60,19 @@ public abstract class Lift {
 	}
 			
 	public int nextPendingFloor(LiftState state) {
-		// x multipiano
+		// per multipiano
 		return Integer.MIN_VALUE;
 	}
 
 	public boolean hasPendingFloors() {
-		// x multipiano
+		// per multipiano
 		return false;
 	}
 
 	
 	public abstract String getMode();
 	
-	// riceve un intero e restituisce una requestresult
+	// riceve un intero e restituisce una request-result
 	public abstract RequestResult goToFloor(int floor);
 
 	

@@ -10,7 +10,6 @@ public class HealthyLift extends Lift {
 	public String getMode() {
 		return "Healthy";
 	}
-
 	
 	@Override
 	public RequestResult goToFloor (int floor) {
@@ -20,7 +19,6 @@ public class HealthyLift extends Lift {
 			return RequestResult.REJECTED;
 		
 		int diff = Math.abs(floor - getCurrentFloor());
-
 		if(diff <= 1) {
 			return RequestResult.REJECTED;			
 		}
@@ -32,8 +30,6 @@ public class HealthyLift extends Lift {
 		else if (floor > getCurrentFloor()) {
 			floor -= 1;
 		}
-		
-		
 		
 		setRequestedFloor(floor);
 		RequestResult res = RequestResult.MODIFIED;
