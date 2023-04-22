@@ -2,13 +2,11 @@ package edlift.model.util;
 
 import java.util.Arrays;
 
-import org.junit.runners.model.FrameworkField;
-
 public class Queue {
 	
-	private int 	booked;
-	private int[]	bookings;
-	private int 	maxBookings;
+	private int booked;
+	private int[] bookings;
+	private int maxBookings;
 	
 	public Queue(int maxBookings) {
 		this.maxBookings = maxBookings;
@@ -27,8 +25,9 @@ public class Queue {
 	}
 	
 	public int extract() {
-		if(!hasItems())
-			return Integer.MIN_VALUE;
+		if(!hasItems()) {
+			return Integer.MIN_VALUE;			
+		}
 		
 		int extracted = this.bookings[0];
 		this.bookings = Arrays.copyOfRange(bookings, 1, booked);
@@ -38,8 +37,7 @@ public class Queue {
 	}
 	
 	public int peek() {
-		if (booked > 0)	return this.bookings[0];			
-		else			return Integer.MIN_VALUE;
+		return hasItems() ? this.bookings[0] : Integer.MIN_VALUE;
 	}
 	
 	public int size() {
@@ -47,7 +45,7 @@ public class Queue {
 	}
 	
 	public boolean hasItems() {
-		return (booked > 0) ? true : false;
+		return (this.booked > 0);
 	}
 	
 	

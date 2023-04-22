@@ -12,7 +12,6 @@ public class BasicLift extends Lift
 		return "Basic";
 	}
 
-	
 	@Override
 	public RequestResult goToFloor(int floor) {
 		checkArrivalFloor(floor);
@@ -24,8 +23,5 @@ public class BasicLift extends Lift
 		setRequestedFloor(floor);
 		return RequestResult.ACCEPTED;
 	}
-	
-	
-	
-	
+
 }

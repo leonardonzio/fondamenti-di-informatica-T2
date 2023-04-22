@@ -1,8 +1,5 @@
 package edlift.model;
 
-import javax.management.Query;
-import javax.swing.plaf.basic.BasicTreeUI.TreeCancelEditingAction;
-
 import edlift.model.util.Queue;
 
 public class MultiFloorLift extends Lift{
@@ -47,10 +44,7 @@ public class MultiFloorLift extends Lift{
 	
 	@Override
 	public int nextPendingFloor(LiftState state) {
-		if (hasPendingFloors())
-			return queue.extract();
-		else
-			return Integer.MIN_VALUE;
+		return hasPendingFloors() ? queue.extract() : Integer.MIN_VALUE;
 	}
 	
 	
