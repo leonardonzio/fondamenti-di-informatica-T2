@@ -1,7 +1,9 @@
 package media;
 
+import media.filters.HasDuration;
+import media.filters.HasGenre;
 
-public class Song extends Media{
+public class Song extends Media implements HasDuration, HasGenre{
 
 	private int duration = -1;
 	private String genre = null;
@@ -47,7 +49,7 @@ public class Song extends Media{
 					getGenre().equals(that.getGenre()) &&
 					getDuration() == that.getDuration();
 		}
-		else return false;
+		return false;
 	}
 	
 	@Override

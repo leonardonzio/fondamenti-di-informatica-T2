@@ -19,7 +19,7 @@ public class TypeFilter implements Filter{
 		if(media instanceof HasType m) {
 			return m.getType().equals(typeToFind);
 		}
-		else return false;
+		return false;
 	}
 
 	

@@ -17,10 +17,10 @@ public class GenreFilter implements Filter {
 	@Override
 	public boolean filter(Media media) {
 		if(media instanceof HasGenre m) {
-			return 	(m.getGenre() == "") ||
+			return 	this.genre.equals(" ") ||
 					m.getGenre().equals(this.genre);
 		}
-		else return false;
+		return false;
 	}
 	
 }

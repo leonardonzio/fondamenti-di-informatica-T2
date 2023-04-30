@@ -2,7 +2,7 @@ package controller;
 
 import media.Media;
 import media.collection.MediaCollection;
-import media.filters.Filter;
+import media.filters.*;
 
 public class MediaController {
 
@@ -43,8 +43,16 @@ public class MediaController {
 	}
 	
 	public MediaCollection find (Filter f) {
-		// finisci
 		
+		MediaCollection res = new MediaCollection (allMedias.size());
+		
+		for (int i = 0; i < allMedias.size(); i++) {
+			var currMedia = allMedias.get(i);
+			if(f.filter(currMedia)) {
+				res.add(currMedia);				
+			}
+		}
+		return res;		
 	}
 	
 	

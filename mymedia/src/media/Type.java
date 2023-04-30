@@ -9,6 +9,7 @@ public enum Type {
 		this.type = string;
 	}
 
-	public String toString()
-	{ return type; }
+	public String toString() { 
+		return type;
+	}
 }

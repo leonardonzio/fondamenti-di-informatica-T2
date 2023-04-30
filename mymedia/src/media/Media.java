@@ -1,6 +1,8 @@
 package media;
 
-public abstract class Media {
+import media.filters.HasType;
+
+public abstract class Media implements HasType{
 
 	private String title = null;
 	private int year = -1;
@@ -16,7 +18,7 @@ public abstract class Media {
 			return 	getTitle().equals(that.getTitle()) && 
 					getYear() == that.getYear();
 		}
-		else return false;
+		return false;
 	}
 
 	public String getTitle() {

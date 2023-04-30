@@ -1,8 +1,9 @@
 package media;
 
+import media.filters.HasGenre;
 import utils.StringUtils;
 
-public class Ebook extends Media {
+public class Ebook extends Media implements HasGenre{
 
 	private String[] authors = null;
 	private String genre = null;
@@ -41,7 +42,7 @@ public class Ebook extends Media {
 				StringUtils.areEquivalent(getAuthors(), that.getAuthors()) &&
 				getGenre().equals(that.getGenre());
 		}
-		else return false;
+		return false;
 	}
 		
 	

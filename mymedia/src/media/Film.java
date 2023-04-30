@@ -3,10 +3,12 @@ package media;
 
 import java.util.Arrays;
 
+import media.filters.HasDuration;
+import media.filters.HasGenre;
 import utils.StringUtils;
 
 
-public class Film extends Media{
+public class Film extends Media implements HasGenre, HasDuration{
 
 	private String actors[] = null;
 	private String director = null;
@@ -63,7 +65,7 @@ public class Film extends Media{
 					getDuration() == that.getDuration() &&
 					getGenre().equals(that.getGenre());
 		}
-		else return false;
+		return false;
 	}
 	
 	@Override

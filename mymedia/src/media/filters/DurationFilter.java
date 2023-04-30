@@ -20,7 +20,7 @@ public class DurationFilter implements Filter {
 			return 	(this.duration == 0) ||
 					m.getDuration() <= this.duration;
 		}
-		else return false;
+		return false;
 	}
 	
 	
