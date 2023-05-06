@@ -36,7 +36,7 @@ public class TestFrazione {
 		var f1 = new Frazione(-68,9);
 		var f2 = new Frazione(66, 5);
 		var fSum = new Frazione(254, 45);
-		assert(f1.sum(f2).equals(fSum));
+		assert(f1.sum(f2).equals(fSum));;
 		
 		
 		// test sub
@@ -52,6 +52,9 @@ public class TestFrazione {
 		// test convertToDouble
 		assert(f2.convertToDouble() == 13.2);
 
+		assert(f1.compareTo(f2) == -1);
+		
+		
 	}
 	
 }

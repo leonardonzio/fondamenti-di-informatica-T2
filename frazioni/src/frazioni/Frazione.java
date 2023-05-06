@@ -3,7 +3,7 @@ package frazioni;
 import util.MyMath;
 
 
-public class Frazione {
+public class Frazione implements Comparable<Frazione>{
 	private int num, den;
 	
 	// getter
@@ -85,7 +85,18 @@ public class Frazione {
 	}
 	
 	public double convertToDouble() {
-		return (double)getNum()/getDen();
+		return (double)getNum() / getDen();
+	}
+	
+	@Override
+	public int compareTo(Frazione o) {
+		double f1 = this.convertToDouble();
+		double f2 = o.convertToDouble();
+
+		if(f1 < f2) return -1;
+		if(f1 > f2) return 1;
+		
+		return 0;
 	}
 	
 	
