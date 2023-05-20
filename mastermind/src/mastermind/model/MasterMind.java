@@ -1,6 +1,8 @@
 package mastermind.model;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class MasterMind {
@@ -21,27 +23,23 @@ public class MasterMind {
 			int randomIndex = nRand.nextInt(PioloDiGioco.values().length - 1) + 1; // da 1 a 6
 			segreta.setPiolo(i, PioloDiGioco.values()[randomIndex]);
 		}
-		
 	}
 
-	public Risposta calcolaRisposta(Combinazione tentativo) {
-		
-		int totali = 0;
-		//int neri = quantiNeri(tentativo);
-		
+	public Risposta calcolaRisposta(Combinazione tentativo) {		
 		int neri = 0;
 		for (int i=0; i < tentativo.dim(); i++) {
 			if (tentativo.getPiolo(i).equals(segreta.getPiolo(i)))
 				neri++;
 		}
 		
-		int[] occorrenzeSeg = getOccorrenze(this.segreta);
-		int[] occorrenzeTent = getOccorrenze(tentativo);
+		var occorrenzeSeg = getOccorrenze(this.segreta);
+		var occorrenzeTent = getOccorrenze(tentativo);
 		
+		int totali = 0;
 		for (PioloDiGioco p : PioloDiGioco.values()) {
-			totali += Math.min(occorrenzeSeg[p.ordinal()], occorrenzeTent[p.ordinal()]);
-		}		
-		Risposta res = new Risposta(this.size);
+			totali += Math.min(occorrenzeSeg.get(p), occorrenzeTent.get(p));
+		}			
+		var res = new Risposta(this.size);
 		
 		// inserisco i neri
 		for (int i = 0; i < neri; i++) {
@@ -74,8 +72,20 @@ public class MasterMind {
 		return neri;
 	}
 	
-	private int[] getOccorrenze(Combinazione tentativo) {
+	private Map<PioloDiGioco, Integer> getOccorrenze(Combinazione tentativo) {
+		var occorrenze = new HashMap<PioloDiGioco, Integer>();
 		
+		for (PioloDiGioco p : PioloDiGioco.values()) {
+			occorrenze.put(p, 0);
+		}
+		
+		for (PioloDiGioco p : tentativo.getCombinazione()) {
+			Integer frequenza = occorrenze.get(p);
+			occorrenze.put(p, frequenza + 1);
+		}
+		return occorrenze;
+
+		/* vecchia soluzione
 		int size = PioloDiGioco.values().length;
 		int[] arrOcc = new int[size];
 		Arrays.fill(arrOcc, 0);
@@ -93,6 +103,10 @@ public class MasterMind {
 		}
 		
 		return arrOcc;
+		*/
+		
+		///////////////////
+		
 		
 		/* soluzione prof:
 
@@ -107,6 +121,5 @@ public class MasterMind {
 		}
 		return arrayOccorrenze;
 		*/
-		
 	}
 }
