@@ -1,0 +1,63 @@
+ARIETE
+-------
+GENNAIO
+Amore:	chi e' single avra' nuove occasioni
+Lavoro:	cogliete le occasioni
+Salute:	perfetto equilibrio
+
+FEBBRAIO
+Amore:	grande intimita'
+Lavoro:	diffidate di un collega invidioso
+Salute:	potete permettervi anche i pasticcini
+
+MARZO
+Amore:	divertimento nello stare insieme
+Lavoro:	non sopravvalutate chi vi e' intorno
+Salute:	perfetto equilibrio
+
+APRILE
+Amore:	grande intimita'
+Lavoro:	cogliete le occasioni
+Salute:	potete permettervi anche i pasticcini
+
+MAGGIO
+Amore:	dedicate piu' tempo al partner
+Lavoro:	cogliete le occasioni
+Salute:	perfetto equilibrio
+
+GIUGNO
+Amore:	divertimento nello stare insieme
+Lavoro:	diffidate di un collega invidioso
+Salute:	potete permettervi anche i pasticcini
+
+LUGLIO
+Amore:	dedicate piu' tempo al partner
+Lavoro:	cogliete le occasioni
+Salute:	potete permettervi anche i pasticcini
+
+AGOSTO
+Amore:	dedicate piu' tempo al partner
+Lavoro:	la lungimiranza sara' la vostra forza
+Salute:	perfetto equilibrio
+
+SETTEMBRE
+Amore:	dedicate piu' tempo al partner
+Lavoro:	la lungimiranza sara' la vostra forza
+Salute:	perfetto equilibrio
+
+OTTOBRE
+Amore:	avrai la testa un po' altrove
+Lavoro:	impegnatevi di piu'
+Salute:	potete permettervi anche i pasticcini
+
+NOVEMBRE
+Amore:	grande intimita'
+Lavoro:	non sopravvalutate chi vi e' intorno
+Salute:	perfetto equilibrio
+
+DICEMBRE
+Amore:	chi e' single avra' nuove occasioni
+Lavoro:	impegnatevi di piu'
+Salute:	perfetto equilibrio
+
+GRADO DI FORTUNA:	6
