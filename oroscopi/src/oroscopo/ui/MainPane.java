@@ -48,8 +48,7 @@ public class MainPane extends BorderPane{
 
 		this.controller = controller;
 		this.fortunaMin = fortunaMin;
-	
-	
+		
 		// center
 		VBox center = new VBox();
 		{
@@ -106,8 +105,6 @@ public class MainPane extends BorderPane{
 		
 		output.setText(oroscopo.toString());
 	}
-	
-	
 	
 	private void handleButton (ActionEvent ev) throws IOException {
 	
